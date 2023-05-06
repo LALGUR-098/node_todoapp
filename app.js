@@ -5,6 +5,7 @@ import taskRouter from "./routes/task.js";
 import {config}  from "dotenv"
 import cookieParser from "cookie-parser";
 import {errorMiddleware} from "./middlewares/error.js";
+import cors from "cors";
 
 
 config({
@@ -19,6 +20,13 @@ export const app=express();
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(
+    cors({
+     origin:[process.env.FRONTEND_URL],
+     methods:["GET","post","PUT","DELETE"],
+     credentials:true,  
+
+}))
 // always put above the router
 
 //using routes
