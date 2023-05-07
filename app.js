@@ -7,12 +7,13 @@ import cookieParser from "cookie-parser";
 import {errorMiddleware} from "./middlewares/error.js";
 import cors from "cors";
 
+export const app=express();
 
 config({
     path:"./data/config.env"
 })
 
-export const app=express();
+
 // using middleware to use json data
 
 

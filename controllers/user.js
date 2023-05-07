@@ -28,13 +28,13 @@ export const login = async(req,res,next)=> {
   } catch (error) {
     next(error);
     
-  };
+  }
  
     
 
 };
 
-export const register =async(req,res)=>{
+export const register =async(req,res,next)=>{
   try {
     const{name,email,password}=req.body;
     let user = await User.findOne({email});
@@ -51,7 +51,7 @@ export const register =async(req,res)=>{
   } catch (error) {
     next(error);
     
-  };
+  }
    
     };
   
